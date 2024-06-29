@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>31 May 2024, 15:08</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.content_type_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.i_logged_bookit_api_as_a(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="884620133">0.884</td>
+              <td class="duration" data-value="884620133">2.653</td>
+              <td class="duration" data-value="5307720800">5.307</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.i_sent_get_request_to_endpoint(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="532621033">0.532</td>
+              <td class="duration" data-value="532621033">0.956</td>
+              <td class="duration" data-value="3195726200">3.195</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.role_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="63641100">0.063</td>
+              <td class="duration" data-value="63641100">0.063</td>
+              <td class="duration" data-value="63641100">0.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.status_code_should_be(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="3992800">0.003</td>
+              <td class="duration" data-value="3992800">0.003</td>
+              <td class="duration" data-value="3992800">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.the_information_about_current_user_from_api_and_database_should_match()</td>
+              <td>1</td>
+              <td class="duration" data-value="141989800">0.141</td>
+              <td class="duration" data-value="141989800">0.141</td>
+              <td class="duration" data-value="141989800">0.141</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.ApiStepDefs.ui_api_and_database_user_information_must_be_match()</td>
+              <td>4</td>
+              <td class="duration" data-value="5078574575">5.078</td>
+              <td class="duration" data-value="5078574575">10.161</td>
+              <td class="duration" data-value="20314298300">20.314</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.Hooks.afterDbHook()</td>
+              <td>5</td>
+              <td class="duration" data-value="3368960">0.003</td>
+              <td class="duration" data-value="3368960">0.013</td>
+              <td class="duration" data-value="16844800">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.Hooks.dbHook()</td>
+              <td>5</td>
+              <td class="duration" data-value="1498885840">1.498</td>
+              <td class="duration" data-value="1498885840">1.659</td>
+              <td class="duration" data-value="7494429200">7.494</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.Hooks.setUp()</td>
+              <td>4</td>
+              <td class="duration" data-value="1147467175">1.147</td>
+              <td class="duration" data-value="1147467175">2.148</td>
+              <td class="duration" data-value="4589868700">4.589</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>4</td>
+              <td class="duration" data-value="289749650">0.289</td>
+              <td class="duration" data-value="289749650">0.330</td>
+              <td class="duration" data-value="1158998600">1.158</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.MyInfoStepDefs.userLogsInUsingCredentials(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="6568138925">6.568</td>
+              <td class="duration" data-value="6568138925">8.208</td>
+              <td class="duration" data-value="26272555700">26.272</td>
+              <td class="failed">75.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.bookit.step_definitions.MyInfoStepDefs.user_is_on_the_my_self_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="3474983775">3.474</td>
+              <td class="duration" data-value="3474983775">10.037</td>
+              <td class="duration" data-value="13899935100">13.899</td>
+              <td class="failed">50.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>13</td>
+            <td>46</td>
+            <td class="duration">1.792</td>
+            <td class="duration">26.272</td>
+            <td class="duration">1:22.460</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
